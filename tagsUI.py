@@ -19,11 +19,9 @@ def newTagName(*args):
         if AssetsTagType == "Shader's":
             del tagFileTitle [:]
             tagFileTitle.append('shadersTag_')
-
         if AssetsTagType == "Light Rig's":
             del tagFileTitle [:]
             tagFileTitle.append('lightRigsTag_')
-
         if AssetsTagType == "Turn Table Setup":
             del tagFileTitle [:]
             tagFileTitle.append('turnTablesTag_')
@@ -31,14 +29,12 @@ def newTagName(*args):
         # checking the dir if the tag name already exists
         tagName = tagNameTextField
         tagFileName = tagFileTitle[0] + tagName + '.txt'
-        # checking the dir if the tag name already exists
         tagFile = os.path.join (tagFilesDir, tagFileName)
 
         tagFileChk = os.path.exists(tagFile)
         if tagFileChk == True:
             cmds.confirmDialog(title="ERROR...", message='Tag with this name already exists')
             cmds.textField("tagName", edit=True, tx='')
-
         else:
             tagFile = os.path.join (tagFilesDir, tagFileName)
             #writing json file
@@ -50,7 +46,6 @@ def newTagName(*args):
             cmds.confirmDialog(title="Tag created successfully", message = 'Done')
             cmds.textField("tagName", edit=True, tx='')
             return tagFile
-
 
 def tagUI(*args):
     tagUI = 'tagUi'
