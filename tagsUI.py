@@ -1,4 +1,4 @@
-# making a tag text file with python and jason in selected dir for asset browser
+# making a tag text file with python and json in selected dir for asset browser
 import os
 import json
 import os.path
